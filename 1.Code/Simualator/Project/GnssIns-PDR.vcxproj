@@ -143,10 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Src\PDR_KmlSupport.cpp" />
     <ClCompile Include="..\Src\PDR_Matrix.c" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Src\PDR_KmlSupport.h" />
     <ClInclude Include="..\Src\PDR_Matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
