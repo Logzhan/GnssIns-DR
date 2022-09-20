@@ -27,12 +27,18 @@
     <ClCompile Include="..\Src\PDR_KmlSupport.cpp">
       <Filter>源文件\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Src\CoordTrans.cpp">
+      <Filter>源文件\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\PDR_Matrix.h">
       <Filter>源文件\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\PDR_KmlSupport.h">
+      <Filter>源文件\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\CoordTrans.h">
       <Filter>源文件\Utils</Filter>
     </ClInclude>
   </ItemGroup>

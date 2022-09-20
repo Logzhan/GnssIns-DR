@@ -20,8 +20,4 @@ typedef struct ResultTracks {
 
 
 }
-
-
-
-
 #endif // _PDR_KML_SUPPORT_H
