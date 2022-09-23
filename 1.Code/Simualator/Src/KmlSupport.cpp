@@ -5,7 +5,7 @@
 * Date of Issued     : 2022.09.15
 * Comments           : PDR Google地图KML格式输出
 ********************************************************************************/
-#include "PDR_KmlSupport.h"
+#include "KmlSupport.h"
 #include <vector>
 
 using namespace PDR;

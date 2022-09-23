@@ -30,12 +30,6 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\PDR_Matrix.c">
-      <Filter>源文件\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\PDR_KmlSupport.cpp">
-      <Filter>源文件\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\CoordTrans.cpp">
       <Filter>源文件\Utils</Filter>
     </ClCompile>
@@ -51,14 +45,26 @@
     <ClCompile Include="..\Src\Quaternion.cpp">
       <Filter>源文件\Math</Filter>
     </ClCompile>
+    <ClCompile Include="..\Src\Matrix.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\KmlSupport.cpp">
+      <Filter>源文件\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Detector.cpp">
+      <Filter>源文件\Ins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Interface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Pedometer.cpp">
+      <Filter>源文件\Ins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\DirectionEstimator.cpp">
+      <Filter>源文件\Ins</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\PDR_Matrix.h">
-      <Filter>源文件\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\PDR_KmlSupport.h">
-      <Filter>源文件\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\Src\CoordTrans.h">
       <Filter>源文件\Utils</Filter>
     </ClInclude>
@@ -76,6 +82,24 @@
     </ClInclude>
     <ClInclude Include="..\Src\Quaternion.h">
       <Filter>源文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\Matrix.h">
+      <Filter>源文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\KmlSupport.h">
+      <Filter>源文件\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\Detector.h">
+      <Filter>源文件\Ins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\Interface.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\Pedometer.h">
+      <Filter>源文件\Ins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\DirectionEstimator.h">
+      <Filter>源文件\Ins</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

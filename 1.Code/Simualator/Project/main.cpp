@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <stdlib.h>
-#include <PDR_Matrix.h>
+#include <Matrix.h>
 
 
 void TestMatrix() {
@@ -18,7 +18,6 @@ void TestMatrix() {
 int main()
 {
     TestMatrix();
-
     system("pause");
 }
 
