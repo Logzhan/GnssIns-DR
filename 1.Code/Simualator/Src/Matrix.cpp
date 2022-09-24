@@ -1,5 +1,5 @@
 /******************** (C) COPYRIGHT 2022 Geek************************************
-* File Name          : PDR_Matrix.c
+* File Name          : Matrix.c
 * Current Version    : V1.0
 * Author             : logzhan
 * Date of Issued     : 2022.09.14
@@ -125,13 +125,13 @@ void VectorSub(double a[N], double b[N], double r[N]) {
 * Description : Çó¾ØÕóµÄÄæ¾ØÕó
 * Date        : 2022/09/14 logzhan
 *---------------------------------------------------------------------**/
-void MatrixInverse(double(*a)[N], double (*a_inv)[N]) {
+void MatrixInverse(double(*M)[N], double (*MInv)[N]) {
 
 	double l[N][N] = { { 0.0 } };
 	double u[N][N] = { { 0.0 } };
-	double l_inv[N][N] = { { 0.0 } };
-	double u_inv[N][N] = { { 0.0 } };
-	double temp[N][N] = { { 0.0 } };
+	double LInv[N][N] = { { 0.0 } };
+	double UInv[N][N] = { { 0.0 } };
+	double Temp[N][N] = { { 0.0 } };
 
 	int i, j, k;
 	double s;
@@ -144,29 +144,29 @@ void MatrixInverse(double(*a)[N], double (*a_inv)[N]) {
 			for (k = 0; k < i; k++){
 				s += l[i][k] * u[k][j];
 			}
-			u[i][j] = a[i][j] - s;
+			u[i][j] = M[i][j] - s;
 		}
 		for (j = i + 1; j < N; j++){
 			s = 0;
 			for (k = 0; k < i; k++){
 				s += l[j][k] * u[k][i];
 			}
-			l[j][i] = (a[j][i] - s) / u[i][i];
+			l[j][i] = (M[j][i] - s) / u[i][i];
 		}
 	}
-	for (i = 0; i < N; i++)l_inv[i][i] = 1;
+	for (i = 0; i < N; i++)LInv[i][i] = 1;
 
 	for (i = 1; i < N; i++){
 		for (j = 0; j < i; j++){
 			s = 0;
 			for (k = 0; k < i; k++){
-				s += l[i][k] * l_inv[k][j];
+				s += l[i][k] * LInv[k][j];
 			}
-			l_inv[i][j] = -s;
+			LInv[i][j] = -s;
 		}
 	}
 	for (i = 0; i < N; i++){
-		u_inv[i][i] = 1 / u[i][i];
+		UInv[i][i] = 1 / u[i][i];
 	}
 	for (i = 1; i < N; i++)
 	{
@@ -175,21 +175,21 @@ void MatrixInverse(double(*a)[N], double (*a_inv)[N]) {
 			s = 0;
 			for (k = j + 1; k <= i; k++)
 			{
-				s += u[j][k] * u_inv[k][i];
+				s += u[j][k] * UInv[k][i];
 			}
-			u_inv[j][i] = -s / u[j][j];
+			UInv[j][i] = -s / u[j][j];
 		}
 	}
 	for (i = 0; i < N; i++){
 		for (j = 0; j < N; j++){
 			for (k = 0; k < N; k++){
-				temp[i][j] += u_inv[i][k] * l_inv[k][j];
+				Temp[i][j] += UInv[i][k] * LInv[k][j];
 			}
 		}
 	}
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++) {
-			a_inv[i][j] = temp[i][j];
+			MInv[i][j] = Temp[i][j];
 		}
 	}
 }

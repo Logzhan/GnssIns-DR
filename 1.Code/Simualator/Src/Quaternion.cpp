@@ -24,11 +24,11 @@ void QuaternionNorm(float* q0, float* q1, float* q2, float* q3) {
 * Description : 四元数求共轭四元数
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
-void QuaternConj(float _q[], float q[]) {
-	_q[0] =  q[0];
-	_q[1] = -q[1];
-	_q[2] = -q[2];
-	_q[3] = -q[3];
+void QuaternConj(float qc[], float q[]) {
+	qc[0] =  q[0];
+	qc[1] = -q[1];
+	qc[2] = -q[2];
+	qc[3] = -q[3];
 }
 
 /**---------------------------------------------------------------------
@@ -36,9 +36,9 @@ void QuaternConj(float _q[], float q[]) {
 * Description : 四元数乘法
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
-void QuaternProd(float ab[], float a[], float b[]) {
-	ab[0] = a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3];
-	ab[1] = a[0] * b[1] + a[1] * b[0] + a[2] * b[3] - a[3] * b[2];
-	ab[2] = a[0] * b[2] - a[1] * b[3] + a[2] * b[0] + a[3] * b[1];
-	ab[3] = a[0] * b[3] + a[1] * b[2] - a[2] * b[1] + a[3] * b[0];
+void QuaternProd(float qab[], float qa[], float qb[]) {
+	qab[0] = qa[0] * qb[0] - qa[1] * qb[1] - qa[2] * qb[2] - qa[3] * qb[3];
+	qab[1] = qa[0] * qb[1] + qa[1] * qb[0] + qa[2] * qb[3] - qa[3] * qb[2];
+	qab[2] = qa[0] * qb[2] - qa[1] * qb[3] + qa[2] * qb[0] + qa[3] * qb[1];
+	qab[3] = qa[0] * qb[3] + qa[1] * qb[2] - qa[2] * qb[1] + qa[3] * qb[0];
 }

@@ -1,3 +1,11 @@
+/******************** (C) COPYRIGHT 2022 Geek************************************
+* File Name          : Detector.cpp
+* Current Version    : V1.0
+* Author             : logzhan
+* Date of Issued     : 2022.09.24
+* Comments           : PDRÔË¶¯¼ì²âÆ÷
+********************************************************************************/
+/* Header File Including -----------------------------------------------------*/
 #include <iostream>
 #include "Detector.h"
 

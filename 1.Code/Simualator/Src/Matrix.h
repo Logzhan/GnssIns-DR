@@ -61,7 +61,7 @@ void VectorSub(double a[N], double b[N], double r[N]);
 * Description : Çó¾ØÕóµÄÄæ¾ØÕó
 * Date        : 2022/09/14 logzhan
 *---------------------------------------------------------------------**/
-void MatrixInverse(double(*a)[N], double(*a_inv)[N]);
+void MatrixInverse(double(*M)[N], double(*MInv)[N]);
 
 #endif
 

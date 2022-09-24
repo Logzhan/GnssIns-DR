@@ -17,14 +17,14 @@ void QuaternionNorm(float* q0, float* q1, float* q2, float* q3);
 * Description : 四元数求共轭四元数
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
-void QuaternConj(float _q[], float q[]);
+void QuaternConj(float qc[], float q[]);
 
 /**---------------------------------------------------------------------
 * Function    : QuaternProd
 * Description : 四元数乘法
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
-void QuaternProd(float ab[], float a[], float b[]);
+void QuaternProd(float qab[], float qa[], float qb[]);
 
 #ifdef __cplusplus
 }

@@ -19,27 +19,27 @@
 #define PDR_FALSE                           0
 
 typedef struct {
-	double xk[N];             // 系统状态变量  xk[0]: 北向x  xk[1]：东向y  xk[2]：步长  xk[3] ：航向角
-	double p_xk[N];           // 最佳预测变量  xk[0]: 北向x  xk[1]：东向y  xk[2]：步长  xk[3] ：航向角
-	double zk[N];
-	double p_pk[N][N];
-	double pk[N][N];
-	double phi[N][N];
+	double Xk[N];             // 系统状态变量  xk[0]: 北向x  xk[1]：东向y  xk[2]：步长  xk[3] ：航向角
+	double pXk[N];            // 最佳预测变量  xk[0]: 北向x  xk[1]：东向y  xk[2]：步长  xk[3] ：航向角
+	double Zk[N];
+	double pPk[N][N];
+	double Pk[N][N];
+	double Phi[N][N];
 	double hk[N][N];
-	double q[N][N];           // 卡尔曼滤波的Q矩阵(过程噪声)
-	double r[N][N];           // 卡尔曼滤波R矩阵(观测噪声)
+	double Q[N][N];           // 卡尔曼滤波的Q矩阵(过程噪声)
+	double R[N][N];           // 卡尔曼滤波R矩阵(观测噪声)
 	double Kk[N][N];
-	double lambda;
-	double plat;
-	double plon;
+	double Lambda;
+	double pLat;
+	double pLon;
 	double initHeading;
 }EKFPara_t;
 
 typedef struct Sensor {
-	unsigned char update;
-	int type;
-	double time;
-	float s[IMU_SENSOR_AXIS];
+	uint8_t update;
+	int     type;
+	double  time;
+	float   s[IMU_SENSOR_AXIS];
 }Sensor_t;
 
 typedef struct IMU {
@@ -53,7 +53,7 @@ typedef struct DETECTOR {
 	uint32_t type;                              // 用户运动类别 ： 0:静止运动 1：无规律运动 2：手持运动 3：摆手运动
 	uint32_t lastType;
 	uint64_t tick;                              // 次数统计，用于调整检测器工作频率
-} DETECTOR_t;
+}Detector_t;
 
 
 typedef struct PDR {
