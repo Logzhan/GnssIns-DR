@@ -1,5 +1,10 @@
 #include "Kalman.h"
 
+// 扩展卡尔曼向量缓存
+static double EkfVecBuf[5][N] = { {0.0} };
+// 扩展卡尔曼矩阵缓存
+static double EkfMatBuf[7][N][N] = { { {0.0} } };
+
 /**----------------------------------------------------------------------
 * Function    : EKF_Init
 * Description : 初始化卡尔曼滤波器相关

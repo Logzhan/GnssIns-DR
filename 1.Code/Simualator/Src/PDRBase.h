@@ -32,7 +32,7 @@ typedef struct {
 	double Lambda;
 	double pLat;
 	double pLon;
-	double initHeading;
+	double initHeading;       // 初始化航向角
 }EKFPara_t;
 
 typedef struct Sensor {
@@ -66,5 +66,12 @@ typedef struct PDR {
 	uint64_t        Steps;                      // 当前步数信息
 	uint64_t        LastSteps;                  // 上一次的步数
 } PDR_t;
+
+
+typedef struct NMEA {
+	uint8_t Update;
+	double  MinTime;
+	double  MaxTime;
+}NMEA_t;
 
 #endif // ! _PDR_BASE_H
