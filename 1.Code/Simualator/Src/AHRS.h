@@ -3,6 +3,9 @@
 
 #include "PDRBase.h"
 
+#define AHRS_SAMPLE_FREQ                        100                   // ARHS算法的传感器采样频率   
+#define AHRS_KP                                 0.500
+
 /**----------------------------------------------------------------------
 * Function    : AHRS_Init
 * Description : AHRS初始化
@@ -15,7 +18,8 @@ void AHRS_Init();
 * Description : Mahony姿态更新算法
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
-void MahonyUpdateAHRS(void);
+void MahonyUpdateAHRS(float gx, float gy, float gz, float ax, float ay, float az,
+                      float mx, float my, float mz);
 
 /**----------------------------------------------------------------------
 * Function    : UpdateAHRS

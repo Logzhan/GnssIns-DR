@@ -15,7 +15,7 @@ void PDRNav_Init(void);
 * Description : PDR惯导位置更新
 * Date        : 2022-09-21 logzhan
 *---------------------------------------------------------------------**/
-void InsLocation(void);
+void InsLocationUpdate(IMU_t* ImuData, EKFPara_t* Ekf);
 
 /**----------------------------------------------------------------------
 * Function    : GnssInsLocFusion

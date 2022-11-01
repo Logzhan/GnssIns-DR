@@ -44,5 +44,6 @@ void DetectorUpdateIMU(IMU_t* imu) {
 * Date        : 2020/7/20
 *---------------------------------------------------------------------**/
 int DetectMotionType() {
+	// 目前仅支持手持平放类型
 	return DETECTOR_TYPE_HANDHELD;
 }

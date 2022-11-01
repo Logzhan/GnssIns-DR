@@ -7,7 +7,6 @@
 #define N                                   4                    // 矩阵维数
 #define MAX_NO_GPS_PREDICT                  10		             // 无GPS信息状态，最大位置推算数量	
 #define IMU_SENSOR_AXIS                     3                    // IMU传感器数据轴数量，默认3
-
 // 用户运动识别
 #define DETECTOR_TYPE_STATIC                0                    // 用户静止 
 #define DETECTOR_TYPE_IRREGULAR             1                    // 无规律运动
@@ -15,8 +14,11 @@
 #define DETECTOR_TYPE_SWINGING              3                    // 摆手运动
 #define DETECTOR_NO_ERROR                   0
 
+#define TYPE_FIX_NONE                       0
+
 #define PDR_TRUE                            1
 #define PDR_FALSE                           0
+#define NO_UPDATE                           0
 
 typedef struct {
 	double Xk[N];             // 系统状态变量  xk[0]: 北向x  xk[1]：东向y  xk[2]：步长  xk[3] ：航向角
@@ -67,11 +69,49 @@ typedef struct PDR {
 	uint64_t        LastSteps;                  // 上一次的步数
 } PDR_t;
 
+typedef struct AHRS {
+	uint8_t status;
+	uint8_t stable;                             // 当前AHRS算法收敛稳定性
+	float error;
+	float q[4];                                 
+	float gravity[3];
+	float x_axis[3];
+	float y_axis[3];
+	float z_axis[3];
+	float Dt;
+	float Kp;                                   // mahony kp比例调节参数
+	float Yaw;
+	float Pitch;
+	float Roll;
+	float insHeading;
+}AHRS_t;
 
-typedef struct NMEA {
+typedef struct {
 	uint8_t Update;
 	double  MinTime;
 	double  MaxTime;
-}NMEA_t;
+}Nmea_t;
+
+
+typedef struct {
+	//LL_NSEW latitude_ns;
+	//LL_NSEW longitudinal_ew;
+	double latitude;
+	double longitudinal;
+	double gpsLat;
+	double gpsLon;
+	double gpsHeading;
+	double pdrHeading;
+	double hdop;
+	double gpsSpeed;
+	double accuracy;
+	double time;
+	double yaw;
+	double lambda;
+	double last_lat;
+	double last_lon;
+	unsigned long step;
+	uint8_t motionType;
+}LctFs_t;
 
 #endif // ! _PDR_BASE_H

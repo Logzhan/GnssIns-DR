@@ -14,7 +14,7 @@
 #include "Location.h"
 
 /* Global Variable Definition ------------------------------------------------*/
-EKFPara_t EkFPara;
+EKFPara_t EkfPara;
 PDR_t     PDR;
 
 /**---------------------------------------------------------------------

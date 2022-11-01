@@ -13,7 +13,8 @@ static double EkfMatBuf[7][N][N] = { { {0.0} } };
 * Date        : 2022/09/21 logzhan
 *---------------------------------------------------------------------**/
 void EKF_Init(void) {
-
+	memset(EkfMatBuf, 0, sizeof(double) * 7 * N * N);
+	memset(EkfVecBuf, 0, sizeof(double) * 5 * N);
 }
 
 
